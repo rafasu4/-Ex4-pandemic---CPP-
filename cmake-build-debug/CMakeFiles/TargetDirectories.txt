@@ -1,0 +1,3 @@
+/home/stycks/CLionProjects/Ex4_a/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/stycks/CLionProjects/Ex4_a/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/stycks/CLionProjects/Ex4_a/cmake-build-debug/CMakeFiles/Ex4_a.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Ex4_a.dir/main.cpp.o  -o Ex4_a 

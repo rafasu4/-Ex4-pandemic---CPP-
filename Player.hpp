@@ -15,12 +15,12 @@ namespace pandemic {
         City currentCity;
         Board board;
         vector<City> cityCards;
-
+        string className;
 
     public:
-        Player(Board board, City city):board(board), currentCity(city){}
+        Player(Board board, City city): currentCity(city){}
         /*Move from current city to one of it's neighbors.*/
-        Player &drive(City city) ;
+        void drive(City city, Board board);
         /*Move from current city to city that player has a card of it. Cost this city's card*/
         Player &fly_direct(City city);
         /*Move from current city to any city. Cost current city's card*/
@@ -38,7 +38,7 @@ namespace pandemic {
          * Note: this action is illegal in case current city's disease level is 0. */
         Player &treat(City city);
         /*Returns this player role.*/
-        void role();
+        string role(){return className;}
         /*Takes a given city's card to the player hand.
          * Note: each city has only one card.
          * Note: if player has this city's card, nothing will happen.*/

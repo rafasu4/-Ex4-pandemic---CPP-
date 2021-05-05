@@ -16,7 +16,6 @@ namespace pandemic{
     class CityContainer {
         Color color;
         vector<City> connections;
-        vector<City> cityCards;
         int diseaseLevel;
         bool researchLab;
         bool cureFounded;
@@ -24,7 +23,7 @@ namespace pandemic{
     public:
         CityContainer(){}
 
-        CityContainer(Color color,string cityName, int diseaseLevel=0, bool researchLab= false, City nei1=emptyCity, City nei2=emptyCity, City nei3=emptyCity, City nei4=emptyCity,
+        CityContainer(Color color, int diseaseLevel=0, bool researchLab= false, City nei1=emptyCity, City nei2=emptyCity, City nei3=emptyCity, City nei4=emptyCity,
                       City nei5=emptyCity, City nei6=emptyCity) : color(color){
             if (nei1 != emptyCity) this->addConnection(nei1);
             if (nei2 != emptyCity)this->addConnection(nei2);
@@ -35,8 +34,11 @@ namespace pandemic{
         }
         /*Returns whether this city is a neighbor or not.*/
         bool hasConnection(City city){
-            if(find(connections.begin(), connections.end(),city ) != connections.end()){return true;}
-                return false;
+            std::vector<City>::iterator it = std::find(connections.begin(), connections.end(), city);
+            if(it != connections.end()){
+                return true;
+            }
+            return false;
          }
          /*Returns this city color.*/
          Color getColor(){return color;}

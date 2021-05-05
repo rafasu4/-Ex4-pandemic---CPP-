@@ -9,11 +9,15 @@
 
 namespace pandemic {
 /*This class represents a specific type of a player. Dispatcher special ability: if current city has research lab, use "fly_direct" with no cost.*/
-    class Dispatcher : Player {
+    class Dispatcher : public Player {
         Board board;
         City currentCity;
-
-        Dispatcher(Board board, City city): pandemic::Player(board, city), board(board), currentCity(city){}
+        string className;
+    public:
+        /*Constructor.*/
+        Dispatcher(Board board, City city): pandemic::Player(board, city), board(board), currentCity(city),
+                className("Dispatcher"){
+        }
         /*Move from current city to one of it's neighbors.*/
         Dispatcher &drive(City city){return *this;}
         /*Move from current city to city that player has a card of it. Cost this city's card. If current city has research lab, cost nothing.*/
@@ -32,8 +36,7 @@ namespace pandemic {
          * Note: in case cure was already found, this action will lower current city's disease level to 0.
          * Note: this action is illegal in case current city's disease level is 0. */
         Dispatcher &treat(City city){return *this;}
-        /*Returns this player role.*/
-        void role(){ cout << "";}
+
         /*Takes a given city's card to the player hand.
          * Note: each city has only one card.
          * Note: if player has this city's card, nothing will happen.*/

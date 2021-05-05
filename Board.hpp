@@ -15,15 +15,16 @@
 namespace pandemic{
     class Board {
     private:
-        std::map<City,CityContainer> world;
+
 
     public:
+        std::map<City,CityContainer> world;
         /*Constructor.*/
         Board();
         /*Returns true if all of the cities in the board are "clean" - disease level is 0.*/
         bool is_clean();
         /*Removes all of the cures that founded so far - used for QA.*/
-        void remove_cures();
+        void remove_cures(){}
         /*Returns the data about the given city in a container.*/
         const CityContainer getCityContainer(City city);
         /*Updates city disease level.*/

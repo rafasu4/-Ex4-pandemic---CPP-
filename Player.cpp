@@ -47,16 +47,16 @@ namespace pandemic{
 
     City pandemic::Player::getCurrentCity(){return currentCity;}
 
-    CityContainer pandemic::Player::getCityContainer(City city){return this->getBoard().getCityContainer(city);}
+    CityContainer pandemic::Player::getCityContainer(City city) {return this->getBoard().getCityContainer(city);}
 
-    Player &pandemic::Player::drive(City city){
+    void pandemic::Player::drive(City city, Board board){
         CityContainer current = this->getCityContainer(city);
         //if the given city isn't in current's neighbors list
         if(!current.hasConnection(city)){
             throw "Illegal action! can't fly to a non-neighbor city!";
         }
         this->currentCity = city;
-        return *this;
+
     }
 
     Player& pandemic::Player::fly_direct(City city){

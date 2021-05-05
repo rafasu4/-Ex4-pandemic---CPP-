@@ -9,8 +9,15 @@
 
 namespace pandemic {
 
-    class Scientist : Player {
-
+    class Scientist :public Player {
+        Board board;
+        City currentCity;
+        string className;
+    public:
+        /*Constructor.*/
+        Scientist(Board board, City city, int x): pandemic::Player(board, city), board(board), currentCity(city),
+                className("Scientist"){
+        }
         /*Move from current city to one of it's neighbors.*/
         Scientist &drive(City city);
         /*Move from current city to city that player has a card of it. Cost this city's card*/
@@ -29,8 +36,7 @@ namespace pandemic {
          * Note: in case cure was already found, this action will lower current city's disease level to 0.
          * Note: this action is illegal in case current city's disease level is 0. */
         Scientist &treat(City city);
-        /*Returns this player role.*/
-        void role();
+
         /*Takes a given city's card to the player hand.
          * Note: each city has only one card.
          * Note: if player has this city's card, nothing will happen.*/

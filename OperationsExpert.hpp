@@ -18,10 +18,18 @@ namespace pandemic {
     public:
         /*Constructor.*/
         OperationsExpert(Board board, City city): pandemic::Player(board, city), board(board), currentCity(city),
-        className("OperationsExpert"){
-        }
+        className("OperationsExpert"){}
         /*Move from current city to one of it's neighbors.*/
-        OperationsExpert &drive(City city){return *this;}
+        OperationsExpert &drive(City city) noexcept(false){
+            CityContainer current = this->getCityContainer(city);
+//            //if the given city isn't in current's neighbors list
+//            if(!current.hasConnection(city)){
+//                throw "Illegal action! can't fly to a non-neighbor city!";
+//            }
+//            this->currentCity = city;
+            return *this;}
+        CityContainer getCityContainer(City city) {return board.world[city];}
+
         /*Move from current city to city that player has a card of it. Cost this city's card*/
         OperationsExpert &fly_direct(City city){return *this;}
         /*Move from current city to any city. Cost current city's card*/
@@ -39,8 +47,8 @@ namespace pandemic {
          * Note: this action is illegal in case current city's disease level is 0. */
         OperationsExpert &treat(City city){return *this;}
         /*Returns this player role.*/
-        void role(){
-            cout<< className << endl;
+        string role(){
+            return className;
         }
 
         /*Takes a given city's card to the player hand.

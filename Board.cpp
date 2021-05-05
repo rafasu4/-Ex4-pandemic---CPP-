@@ -1,61 +1,61 @@
 //
 // Created by stycks on 04/05/2021.
-//
+// 0,
 #include "Board.hpp"
 
 namespace pandemic{
     pandemic::Board::Board(){
-        world[Atlanta] =CityContainer (Blue,"Atlanta", Chicago,Miami,Washington);
-        world[Chicago]=CityContainer(Blue,"Chicago", SanFrancisco,LosAngeles,MexicoCity,Atlanta,Montreal);
-        world[Essen]=CityContainer(Blue,"Essen" ,London,Paris,Milan,StPetersburg);
-        world[London]=CityContainer(Blue,"London", NewYork,Madrid,Essen,Paris);
-        world[Madrid]=CityContainer(Blue,"Madrid",London,NewYork,Paris,SaoPaulo,Algiers);
-        world[Milan]=CityContainer(Blue,"Milan", Essen,Paris,Istanbul);
-        world[Montreal]=CityContainer(Blue,"Montreal",Chicago,Washington,NewYork);
-        world[NewYork]=CityContainer(Blue,"NewYork", Montreal,Washington,London,Madrid);
-        world[Paris]=CityContainer(Blue,"Paris",Algiers,Essen,Madrid,Milan,London);
-        world[SanFrancisco]=CityContainer(Blue,"SanFrancisco",LosAngeles,Chicago,Tokyo,Manila);
-        world[StPetersburg]=CityContainer(Blue,"StPetersburg",Essen,Istanbul,Moscow);
-        world[Washington]=CityContainer(Blue,"Washington",Atlanta,NewYork,Montreal,Miami);
-        //yellow cities
-        world[Bogota]=CityContainer(Yellow,"Bogota",MexicoCity,Lima,Miami,SaoPaulo,BuenosAires);
-        world[BuenosAires]=CityContainer(Yellow,"BuenosAires",Bogota,SaoPaulo);
-        world[Johannesburg]=CityContainer(Yellow,"Johannesburg",Kinshasa,Khartoum);
-        world[Khartoum]=CityContainer(Yellow,"Khartoum",Lagos,Kinshasa,Johannesburg);
-        world[Kinshasa]=CityContainer(Yellow,"Kinshasa",Lagos,Khartoum,Johannesburg);
-        world[Lagos]=CityContainer(Yellow,"Lagos",SaoPaulo,Khartoum,Kinshasa);
-        world[Lima]=CityContainer(Yellow,"Lima",MexicoCity,Bogota,Santiago);
-        world[LosAngeles]=CityContainer(Yellow,"LosAngeles",SanFrancisco,Chicago,MexicoCity,Sydney);
-        world[MexicoCity]=CityContainer(Yellow,"MexicoCity",LosAngeles,Chicago,Miami,Lima,Bogota);
-        world[Miami]=CityContainer(Yellow,"Miami",Atlanta,MexicoCity,Washington,Bogota);
-        world[Santiago]=CityContainer(Yellow,"Santiago",Lima);
-        world[SaoPaulo]=CityContainer(Yellow,"SaoPaulo",Bogota,BuenosAires,Lagos,Madrid);
-        //black cities
-        world[Algiers]=CityContainer(Black,"Algiers",Madrid,Paris,Istanbul,Cairo);
-        world[Baghdad]=CityContainer(Black,"Baghdad",Tehran,Istanbul,Cairo,Riyadh,Karachi);
-        world[Cairo]=CityContainer(Black,"Cairo",Algiers,Istanbul,Baghdad,Khartoum,Riyadh);
-        world[Chennai]=CityContainer(Black,"Chennai",Mumbai,Delhi,Kolkata,Bangkok,Jakarta);
-        world[Delhi]=CityContainer(Black,"Delhi",Tehran,Karachi,Mumbai,Chennai,Kolkata);
-        world[Istanbul]=CityContainer(Black,"Istanbul",Milan,Algiers,StPetersburg,Cairo,Baghdad,Moscow);
-        world[Karachi]=CityContainer(Black,"Karachi",Tehran,Baghdad,Riyadh,Mumbai,Delhi);
-        world[Kolkata]=CityContainer(Black,"Kolkata",Delhi,Chennai,Bangkok,HongKong);
-        world[Moscow]=CityContainer(Black,"Moscow",StPetersburg,Istanbul,Tehran);
-        world[Mumbai]=CityContainer(Black,"Mumbai",Karachi,Delhi,Chennai);
-        world[Riyadh]=CityContainer(Black,"Riyadh",Baghdad,Cairo,Karachi);
-        world[Tehran]=CityContainer(Black,"Tehran",Baghdad,Moscow,Karachi,Delhi);
-        //red cities
-        world[Bangkok]=CityContainer(Red,"Bangkok",Kolkata,Chennai,Jakarta,HoChiMinhCity,HongKong);
-        world[Beijing]=CityContainer(Red,"Beijing",Shanghai,Seoul);
-        world[HoChiMinhCity]=CityContainer(Red,"HoChiMinhCity",Jakarta,Bangkok,HongKong,Manila);
-        world[HongKong]=CityContainer(Red,"HongKong",Bangkok,Kolkata,HoChiMinhCity,Shanghai,Manila,Taipei);
-        world[Jakarta]=CityContainer(Red,"Jakarta",Chennai,Bangkok,HoChiMinhCity,Sydney);
-        world[Manila]=CityContainer(Red,"Manila",Taipei,SanFrancisco,HoChiMinhCity,Sydney);
-        world[Osaka]=CityContainer(Red,"Osaka",Taipei,Tokyo);
-        world[Seoul]=CityContainer(Red,"Seoul",Beijing,Shanghai,Tokyo);
-        world[Shanghai]=CityContainer(Red,"Shanghai",Beijing,HongKong,Taipei,Seoul,Tokyo);
-        world[Sydney]=CityContainer(Red,"Sydney",Jakarta,Manila,LosAngeles);
-        world[Taipei]=CityContainer(Red,"Taipei",Shanghai,HongKong,Osaka,Manila);
-        world[Tokyo]=CityContainer(Red,"Tokyo",Seoul,Shanghai,Osaka,SanFrancisco);
+        world[Atlanta] =CityContainer (Blue, 0, false,Chicago,Miami,Washington);
+//        world[Chicago]=CityContainer(Blue, SanFrancisco,LosAngeles,MexicoCity,Atlanta,Montreal);
+//        world[Essen]=CityContainer(Blue ,London,Paris,Milan,StPetersburg);
+//        world[London]=CityContainer(Blue, NewYork,Madrid,Essen,Paris);
+//        world[Madrid]=CityContainer(Blue,London,NewYork,Paris,SaoPaulo,Algiers);
+//        world[Milan]=CityContainer(Blue,Essen,Paris,Istanbul);
+//        world[Montreal]=CityContainer(Blue,Chicago,Washington,NewYork);
+//        world[NewYork]=CityContainer(Blue, Montreal,Washington,London,Madrid);
+//        world[Paris]=CityContainer(Blue,Algiers,Essen,Madrid,Milan,London);
+//        world[SanFrancisco]=CityContainer(Blue,LosAngeles,Chicago,Tokyo,Manila);
+//        world[StPetersburg]=CityContainer(Blue,Essen,Istanbul,Moscow);
+//        world[Washington]=CityContainer(Blue,Atlanta,NewYork,Montreal,Miami);
+//        //yellow cities
+//        world[Bogota]=CityContainer(Yellow,MexicoCity,Lima,Miami,SaoPaulo,BuenosAires);
+//        world[BuenosAires]=CityContainer(Yellow,Bogota,SaoPaulo);
+//        world[Johannesburg]=CityContainer(Yellow,Kinshasa,Khartoum);
+//        world[Khartoum]=CityContainer(Yellow,Lagos,Kinshasa,Johannesburg);
+//        world[Kinshasa]=CityContainer(Yellow,Lagos,Khartoum,Johannesburg);
+//        world[Lagos]=CityContainer(Yellow,SaoPaulo,Khartoum,Kinshasa);
+//        world[Lima]=CityContainer(Yellow,MexicoCity,Bogota,Santiago);
+//        world[LosAngeles]=CityContainer(Yellow,SanFrancisco,Chicago,MexicoCity,Sydney);
+//        world[MexicoCity]=CityContainer(Yellow,LosAngeles,Chicago,Miami,Lima,Bogota);
+//        world[Miami]=CityContainer(Yellow,Atlanta,MexicoCity,Washington,Bogota);
+//        world[Santiago]=CityContainer(Yellow,Lima);
+//        world[SaoPaulo]=CityContainer(Yellow,Bogota,BuenosAires,Lagos,Madrid);
+//        //black cities
+//        world[Algiers]=CityContainer(Black,Madrid,Paris,Istanbul,Cairo);
+//        world[Baghdad]=CityContainer(Black,Tehran,Istanbul,Cairo,Riyadh,Karachi);
+//        world[Cairo]=CityContainer(Black,Algiers,Istanbul,Baghdad,Khartoum,Riyadh);
+//        world[Chennai]=CityContainer(Black,Mumbai,Delhi,Kolkata,Bangkok,Jakarta);
+//        world[Delhi]=CityContainer(Black,Tehran,Karachi,Mumbai,Chennai,Kolkata);
+//        world[Istanbul]=CityContainer(Black,Milan,Algiers,StPetersburg,Cairo,Baghdad,Moscow);
+//        world[Karachi]=CityContainer(Black,Tehran,Baghdad,Riyadh,Mumbai,Delhi);
+//        world[Kolkata]=CityContainer(Black,Delhi,Chennai,Bangkok,HongKong);
+//        world[Moscow]=CityContainer(Black,StPetersburg,Istanbul,Tehran);
+//        world[Mumbai]=CityContainer(Black,Karachi,Delhi,Chennai);
+//        world[Riyadh]=CityContainer(Black,Baghdad,Cairo,Karachi);
+//        world[Tehran]=CityContainer(Black,Baghdad,Moscow,Karachi,Delhi);
+//        //red cities
+//        world[Bangkok]=CityContainer(Red,Kolkata,Chennai,Jakarta,HoChiMinhCity,HongKong);
+//        world[Beijing]=CityContainer(Red,Shanghai,Seoul);
+//        world[HoChiMinhCity]=CityContainer(Red,Jakarta,Bangkok,HongKong,Manila);
+//        world[HongKong]=CityContainer(Red,Bangkok,Kolkata,HoChiMinhCity,Shanghai,Manila,Taipei);
+//        world[Jakarta]=CityContainer(Red,Chennai,Bangkok,HoChiMinhCity,Sydney);
+//        world[Manila]=CityContainer(Red,Taipei,SanFrancisco,HoChiMinhCity,Sydney);
+//        world[Osaka]=CityContainer(Red,Taipei,Tokyo);
+//        world[Seoul]=CityContainer(Red,Beijing,Shanghai,Tokyo);
+//        world[Shanghai]=CityContainer(Red,Beijing,HongKong,Taipei,Seoul,Tokyo);
+//        world[Sydney]=CityContainer(Red,Jakarta,Manila,LosAngeles);
+//        world[Taipei]=CityContainer(Red,Shanghai,HongKong,Osaka,Manila);
+//        world[Tokyo]=CityContainer(Red,Seoul,Shanghai,Osaka,SanFrancisco);
     }
 
     int& pandemic::Board::operator[](City c) {

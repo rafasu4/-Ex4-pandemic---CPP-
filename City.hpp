@@ -64,8 +64,7 @@ namespace pandemic {
         Sydney, //=45
         Taipei, //=46
         Tokyo, //=47
-        //
-        emptyCity
+        emptyCity//used in default constrctor of player
     };
 
 

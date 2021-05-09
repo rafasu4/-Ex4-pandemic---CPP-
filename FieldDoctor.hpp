@@ -31,7 +31,7 @@ namespace pandemic {
         /*Discovers a cure to a given color type(doesn't have to be the same as city's). Player must have a research lab in current city.
          * Cost 5 city card of the same color.
          * Note: in case cure was already found, nothing will happen.*/
-        void discover_cure(Color color){}
+        void discover_cure(Color color);
         /*Lowers current city's disease level by one.
          * Note: in case cure was already found, this action will lower current city's disease level to 0.
          * Note: this action is illegal in case current city's disease level is 0. */

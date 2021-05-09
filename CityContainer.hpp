@@ -13,16 +13,25 @@
 using namespace std;
 
 namespace pandemic{
+    /*This class collects info on a specific city in the board.*/
+
     class CityContainer {
+        /*This city color.*/
         Color color;
+        /*Holds all of this city's neighbors.*/
         vector<City> connections;
+        /*This city disease Level.*/
         int diseaseLevel;
+        /*This city research Lab.*/
         bool researchLab;
+        /*Has a cured been found.*/
         bool cureFounded;
 
     public:
+        /*Default constructor.*/
         CityContainer(){}
 
+        /*Constructor.*/
         CityContainer(Color color, int diseaseLevel=0, bool researchLab= false, City nei1=emptyCity, City nei2=emptyCity, City nei3=emptyCity, City nei4=emptyCity,
                       City nei5=emptyCity, City nei6=emptyCity) : color(color){
             if (nei1 != emptyCity) this->addConnection(nei1);
@@ -32,6 +41,7 @@ namespace pandemic{
             if (nei5 != emptyCity)this->addConnection(nei5);
             if (nei6 != emptyCity)this->addConnection(nei6);
         }
+
         /*Returns whether this city is a neighbor or not.*/
         bool hasConnection(City city){
             std::vector<City>::iterator it = std::find(connections.begin(), connections.end(), city);
@@ -64,8 +74,8 @@ namespace pandemic{
         void addConnection(City neighbor){this->connections.push_back(neighbor);}
         /*Set this city as cured.*/
         void setCured(){ cureFounded = true;}
-        friend class Board;
-        friend class Player;
+    
+    friend class Board;
     };
 }
 #endif //EX4_A_CITYCONTAINER_HPP
